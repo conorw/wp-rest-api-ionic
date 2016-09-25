@@ -1,0 +1,23 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-view view-title="Match Report" name="report">
+  <ion-content>
+
+    <div class="list">
+        <label class="item item-input item-stacked-label">
+    <span class="input-label">Score</span>
+    <input type="text" ng-model="data.score" placeholder="Score">
+    </label>
+
+        <label class="item item-input item-stacked-label">
+    <span class="input-label">Match Report</span>
+    <input type="text" ng-model="data.report" placeholder="Match Report">
+    </label>
+    </div>
+
+    <button ng-click="createReport()" class="button button-block button-calm">Submit Report</button>
+
+</ion-view>
