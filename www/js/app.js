@@ -37,7 +37,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       })
       .state('report', {
         url: '/report',
-
         templateUrl: 'templates/report.html',
         controller: 'ReportCtrl'
       })
@@ -46,6 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
 
-     $httpProvider.interceptors.push('authInterceptor');
+    // the authInterceptor is defined in the services.js file
+    $httpProvider.interceptors.push('authInterceptor');
 
   });
