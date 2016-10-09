@@ -1,5 +1,7 @@
 angular.module('starter.services', [])
   .service('LoginService', function ($q, $http, $window) {
+    // this service is used to contact a Wordpress REST API end point
+    // and request an authentication token
     function login(email, password, success, failure) {
 
       var data = {
@@ -62,10 +64,13 @@ angular.module('starter.services', [])
       createReport: createReport
     }
   }).factory('authInterceptor', function ($rootScope, $q, $window) {
+    // intercept all http requests 
+    // if a token is in localstorage
+    // add it to all requests 
     return {
       request: function (config) {
         config.headers = config.headers || {};
-        //if there is a token,add it to
+        //if there is a token,add it to the http reques
         if ($window.sessionStorage.token) {
           config.headers.Authorization = 'Bearer ' + $window.sessionStorage.token;
         }
